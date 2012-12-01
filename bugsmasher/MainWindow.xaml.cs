@@ -75,8 +75,8 @@ namespace COMP212_Assignments07
                 x = aWidth - 50;
             if (y < 10)
                 y = 10;
-            if (y > aHeight - 10)
-                y = aHeight;
+            if (y > aHeight - 50)
+                y = aHeight - 50;
             Dispatcher.Invoke(new Action<double, double>(SetPos), x, y);
         }
 
@@ -95,6 +95,12 @@ namespace COMP212_Assignments07
                 speed = 2400;
             timer.Interval = speed;
             MoveBug();
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            aWidth = (int)this.Width - 74;
+            aHeight = (int)this.Height - 95;
         }
     }
 }
